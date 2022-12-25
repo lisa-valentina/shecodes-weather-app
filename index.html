@@ -11,6 +11,12 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather App</title>
   </head>
   <body>
@@ -18,10 +24,16 @@
       <div class="row">
         <div class="col-4 card search-engine-card">
           <form id="search-engine">
-            <input type="search" id="city-input" placeholder="Change city..." />
+            <input type="search" id="city-input" placeholder="Search city..." />
           </form>
         </div>
-        <div class="col-8 card current-weather-card">Current Weather</div>
+        <div class="col-8 card current-weather-card">
+          <h1 id="city">City</h1>
+          <ul>
+            <li>date</li>
+            <li>weather description</li>
+          </ul>
+        </div>
       </div>
       <div class="row">
         <div class="col-12 card weather-forecast-card">Weather forecast</div>
