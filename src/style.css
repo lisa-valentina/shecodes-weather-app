@@ -9,6 +9,22 @@ input {
   margin: 5px;
 }
 
+.current-location {
+  background: none;
+  border: none;
+  transition: all 150ms ease-in-out;
+}
+a.current-location span {
+  display: none;
+  color: #5585b5;
+}
+a.current-location:hover span {
+  display: block;
+  position: absolute;
+  left: 45px;
+  padding-top: 5px;
+  font-size: 13px;
+}
 h1 {
   font-size: 50px;
 }
@@ -19,7 +35,7 @@ li {
 
 .weather-app {
   margin: 30px auto;
-  max-width: 800px;
+  max-width: 900px;
   display: grid;
 }
 
@@ -52,6 +68,10 @@ li {
 .current-weather-card {
   text-align: right;
 }
+.current-weather {
+  text-align: right;
+}
+
 .degrees {
   font-size: 50px;
   line-height: 1;

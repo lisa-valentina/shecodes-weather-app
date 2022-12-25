@@ -18,6 +18,10 @@
     />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7e05cc5139.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Weather App</title>
   </head>
   <body>
@@ -33,13 +37,19 @@
                   placeholder="Search city..."
                 />
               </form>
+              <a class="current-location" href="#">
+                <button class="current-location">
+                  <span>Show current location</span>
+                  <i class="fa-solid fa-map-pin icon"></i>
+                </button>
+              </a>
             </div>
           </div>
           <div class="col-8">
             <div class="p-2 border current-weather-card">
               <h1 id="city"></h1>
               <ul class="local-time">
-                <li id="date"></li>
+                <li id="date">25.12.</li>
                 <li id="time"></li>
               </ul>
               <div class="row weather-details">
@@ -49,6 +59,8 @@
                     ><a href="#" class="celsius"> °C</a> |
                     <a href="#" class="fahrenheit">°F</a>
                   </span>
+                  <img src="" alt="" class="weather-icon" />
+                  <div class="weather-description"></div>
                 </div>
                 <div class="col-3">
                   <ul>
