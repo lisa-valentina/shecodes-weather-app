@@ -41,6 +41,12 @@ function displayResults(response) {
   document.querySelector(".degrees").innerHTML = Math.round(
     response.data.temperature.current
   );
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = `${response.data.temperature.humidity} %`;
+  document.querySelector("#wind").innerHTML = `${Math.round(
+    response.data.wind.speed
+  )} km/h`;
 }
 
 function search(city) {
