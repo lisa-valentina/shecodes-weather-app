@@ -65,4 +65,4 @@ function handleSubmit(event) {
 let searchEngine = document.querySelector("#search-engine");
 searchEngine.addEventListener("submit", handleSubmit);
 
-//search("Berlin");
+search("Berlin");
