@@ -61,6 +61,11 @@ li {
   text-decoration: none;
   color: black;
 }
+
+.active:hover {
+  cursor: default;
+}
+
 .fahrenheit:hover {
   text-decoration: none;
   color: black;
