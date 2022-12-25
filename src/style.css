@@ -14,10 +14,12 @@ h1 {
 }
 li {
   list-style: none;
+  margin-bottom: 0px;
 }
 
 .weather-app {
   margin: 30px auto;
+  max-width: 800px;
   display: grid;
 }
 
@@ -52,6 +54,7 @@ li {
 }
 .degrees {
   font-size: 50px;
+  line-height: 1;
 }
 .local-time {
   font-size: 25px;
