@@ -38,6 +38,9 @@ function displayResults(response) {
   document.querySelector(
     "#city"
   ).innerHTML = `${response.data.city}, ${response.data.country}`;
+  document.querySelector(".degrees").innerHTML = Math.round(
+    response.data.temperature.current
+  );
 }
 
 function search(city) {
