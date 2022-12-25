@@ -22,39 +22,50 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-4 card search-engine-card">
-          <form id="search-engine">
-            <input type="search" id="city-input" placeholder="Search city..." />
-          </form>
-        </div>
-        <div class="col-8 card current-weather-card">
-          <h1 id="city">City</h1>
-          <ul class="local-time">
-            <li id="date">date</li>
-            <li id="time">time</li>
-          </ul>
-          <div class="row weather-details">
-            <div class="col">4° C | F</div>
-            <div class="col">
-              <ul>
-                <li id="humidity">Humidity</li>
-                <li id="wind">Wind</li>
+      <div class="weather-app">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-2 border search-engine-card">
+              <form id="search-engine">
+                <input
+                  type="search"
+                  id="city-input"
+                  placeholder="Search city..."
+                />
+              </form>
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="p-2 border current-weather-card">
+              <h1 id="city">City</h1>
+              <ul class="local-time">
+                <li id="date">date</li>
+                <li id="time">time</li>
               </ul>
+              <div class="row weather-details">
+                <div class="col">
+                  <span class="degrees">4</span>
+                  <a href="#" class="celsius">°C</a> |
+                  <a href="#" class="fahrenheit">°F</a>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li id="humidity">Humidity</li>
+                    <li id="wind">Wind</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="col p-2 border weather-forecast-card">Weather forecast</div>
+        <footer>
+          <a href="https://github.com/lisa-valentina/shecodes-weather-app"
+            >Open-source code</a
+          >
+          by Lisa Valentina Riedel
+        </footer>
       </div>
-      <div class="row">
-        <div class="col-12 card weather-forecast-card">Weather forecast</div>
-      </div>
-
-      <footer>
-        <a href="https://github.com/lisa-valentina/shecodes-weather-app"
-          >Open-source code</a
-        >
-        by Lisa Valentina Riedel
-      </footer>
     </div>
     <script src="src/script.js"></script>
   </body>

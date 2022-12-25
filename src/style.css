@@ -1,24 +1,62 @@
 body {
   font-family: "Barlow Condensed", sans-serif;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 50px;
 }
 
 input {
   border-color: #5585b5;
   border-radius: 5px;
   font-size: 18px;
-  margin: 25px;
+  margin: 5px;
+}
+
+h1 {
+  font-size: 50px;
 }
 li {
   list-style: none;
 }
 
+.weather-app {
+  margin: 30px auto;
+  display: grid;
+}
+
+.search-engine-card {
+  border-radius: 3px;
+}
+.current-weather-card {
+  border-radius: 3px;
+}
+.weather-forecast-card {
+  border-radius: 3px;
+  margin: 5px 0px;
+}
+.celsius {
+  text-decoration: none;
+  color: black;
+}
+.fahrenheit {
+  text-decoration: none;
+  color: black;
+}
+.celsius:hover {
+  text-decoration: none;
+  color: black;
+}
+.fahrenheit:hover {
+  text-decoration: none;
+  color: black;
+}
 .current-weather-card {
   text-align: right;
 }
-
+.degrees {
+  font-size: 50px;
+}
+.local-time {
+  font-size: 25px;
+}
 .weather-details {
   text-align: left;
+  font-size: 20px;
 }
