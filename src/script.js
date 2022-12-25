@@ -98,9 +98,16 @@ function conversionFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
+function conversionCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".degrees");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 let convertFahrenheit = document.querySelector(".fahrenheit");
 convertFahrenheit.addEventListener("click", conversionFahrenheit);
 
+let convertCelsius = document.querySelector(".celsius");
+convertCelsius.addEventListener("click", conversionCelsius);
 let celsiusTemperature = null;
 
 search("Berlin");
