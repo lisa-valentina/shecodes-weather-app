@@ -1,16 +1,16 @@
-let currentDate = new Date();
-let year = currentDate.getFullYear();
-let day = currentDate.getDate();
-let hours = currentDate.getHours();
+let now = new Date();
+let year = now.getFullYear();
+let day = now.getDate();
+let hours = now.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
 }
-let minutes = currentDate.getMinutes();
+let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-let weekday = days[currentDate.getDay()];
+let weekday = days[now.getDay()];
 
 let months = [
   "Jan",
@@ -26,7 +26,10 @@ let months = [
   "Nov",
   "Dec",
 ];
-let month = months[currentDate.getMonth()];
+let month = months[now.getMonth()];
+
+let date = document.querySelector("#date");
+date.innerHTML = `${weekday}, ${month}. ${day}, ${year}`;
 
 let time = document.querySelector("#time");
 time.innerHTML = `${hours}:${minutes}`;
