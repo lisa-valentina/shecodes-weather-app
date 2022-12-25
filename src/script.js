@@ -34,11 +34,26 @@ date.innerHTML = `${weekday}, ${month}. ${day}, ${year}`;
 let time = document.querySelector("#time");
 time.innerHTML = `${hours}:${minutes}`;
 
-function search() {
-  let city = "berlin";
+function displayResults(response) {
+  document.querySelector(
+    "#city"
+  ).innerHTML = `${response.data.city}, ${response.data.country}`;
+}
+
+function search(city) {
   let unit = "metric";
   let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
-  axios.get(apiUrl).then(alert("hi"));
+  axios.get(apiUrl).then(displayResults);
 }
-search("Berlin");
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  search(city);
+}
+
+let searchEngine = document.querySelector("#search-engine");
+searchEngine.addEventListener("submit", handleSubmit);
+
+//search("Berlin");
