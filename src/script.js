@@ -33,3 +33,12 @@ date.innerHTML = `${weekday}, ${month}. ${day}, ${year}`;
 
 let time = document.querySelector("#time");
 time.innerHTML = `${hours}:${minutes}`;
+
+function search() {
+  let city = "berlin";
+  let unit = "metric";
+  let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(alert("hi"));
+}
+search("Berlin");
