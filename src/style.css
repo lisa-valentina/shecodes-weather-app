@@ -63,3 +63,11 @@ li {
   text-align: left;
   font-size: 20px;
 }
+
+#humidity {
+  text-align: right;
+}
+
+#wind {
+  text-align: right;
+}
