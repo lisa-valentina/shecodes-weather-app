@@ -1,3 +1,5 @@
+//to do timestamp & geolocation api
+
 let now = new Date();
 let year = now.getFullYear();
 let day = now.getDate();
@@ -78,11 +80,10 @@ searchEngine.addEventListener("submit", handleSubmit);
 
 function showPosition(position) {
   let unit = "metric";
-  let longitude = position.coordinates.longitude;
-  let latitude = position.coordinates.latitude;
+  let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
   let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&unit=${unit}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayResults);
 }
 
