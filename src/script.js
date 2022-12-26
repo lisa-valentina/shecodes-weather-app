@@ -1,40 +1,42 @@
-//to do timestamp & geolocation api
+//to do timestamp
 
-let now = new Date();
-let year = now.getFullYear();
-let day = now.getDate();
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+function formatTime(timestamp) {
+  let now = new Date(timestamp * 1000);
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+
+function formatDate(daystamp) {
+  let today = new Date(daystamp * 1000);
+  let year = today.getFullYear();
+  let day = today.getDate();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  let weekday = days[today.getDay()];
+  let months = [
+    "Jan",
+    "Feb",
+    "March",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  let month = months[today.getMonth()];
+
+  return `${weekday}, ${month}. ${day}, ${year}`;
 }
-let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
-let weekday = days[now.getDay()];
-
-let months = [
-  "Jan",
-  "Feb",
-  "March",
-  "Apr",
-  "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
-];
-let month = months[now.getMonth()];
-
-let date = document.querySelector("#date");
-date.innerHTML = `${weekday}, ${month}. ${day}, ${year}`;
-
-let time = document.querySelector("#time");
-time.innerHTML = `${hours}:${minutes}`;
 
 function displayResults(response) {
   celsiusTemperature = response.data.temperature.current;
@@ -60,6 +62,8 @@ function displayResults(response) {
       "alt",
       response.data.condition.icon
     );
+  document.querySelector("#time").innerHTML = formatTime(response.data.time);
+  document.querySelector("#date").innerHTML = formatDate(response.data.time);
 }
 
 function search(city) {
