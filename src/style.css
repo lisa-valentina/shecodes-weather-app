@@ -49,6 +49,9 @@ li {
   border-radius: 3px;
   margin: 5px 0px;
 }
+#forecast {
+  text-align: center;
+}
 .celsius {
   text-decoration: none;
   color: black;

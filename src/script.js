@@ -66,6 +66,24 @@ function displayResults(response) {
   document.querySelector("#date").innerHTML = formatDate(response.data.time);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col" id="day-1">
+              ${day}
+              <img src="" alt="" id="icon-day-1" />
+              <span class="min-temp-day-1"></span>
+              <span class="max-temp-day-1"></span>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function search(city) {
   let unit = "metric";
   let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
@@ -123,3 +141,4 @@ convertCelsius.addEventListener("click", conversionCelsius);
 let celsiusTemperature = null;
 
 search("Berlin");
+displayForecast();
