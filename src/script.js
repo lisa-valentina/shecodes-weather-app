@@ -1,4 +1,4 @@
-//to do timestamp
+//to do min max temp current day
 
 function formatTime(timestamp) {
   let now = new Date(timestamp * 1000);
