@@ -38,6 +38,13 @@ function formatDate(daystamp) {
   return `${weekday}, ${month}. ${day}, ${year}`;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
+  let unit = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(alert("hi"));
+}
+
 function displayResults(response) {
   celsiusTemperature = response.data.temperature.current;
   document.querySelector(
@@ -64,6 +71,8 @@ function displayResults(response) {
     );
   document.querySelector("#time").innerHTML = formatTime(response.data.time);
   document.querySelector("#date").innerHTML = formatDate(response.data.time);
+
+  getForecast(response.data.coordinates);
 }
 
 function displayForecast() {
