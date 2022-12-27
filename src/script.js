@@ -12,6 +12,11 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+function formatForecast(daystamp) {
+  let forecastDay = new Date(daystamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+  return `${days[forecastDay.getDay()]}`;
+}
 
 function formatDate(daystamp) {
   let today = new Date(daystamp * 1000);
@@ -83,7 +88,7 @@ function displayForecast(response) {
     forecastHTML =
       forecastHTML +
       `<div class="col" id="day-1">
-              ${forecastDay}
+              ${formatForecast(forecastDay.time)}
             <img src="${
               forecastDay.condition.icon_url
             }" alt="" id="icon-day-1" />
