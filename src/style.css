@@ -77,12 +77,17 @@ li {
 }
 .current-min-temp {
   font-size: 20px;
+  opacity: 60%;
   text-align: right;
 }
 
 .current-max-temp {
   font-size: 20px;
   text-align: right;
+}
+
+.min-temp-forecast {
+  opacity: 60%;
 }
 
 .divider {

@@ -1,5 +1,6 @@
-//to do min max temp current day
 //check final project with dark mode etc. and use this system to change all fahrenheit and celsius, by always changing unit metric to imperial
+//add final css
+//clean up code
 
 function formatTime(timestamp) {
   let now = new Date(timestamp * 1000);
@@ -89,16 +90,16 @@ function displayForecast(response) {
     if (index) {
       forecastHTML =
         forecastHTML +
-        `<div class="col" id="day-1">
+        `<div class="col" id="forecast">
               ${formatForecast(forecastDay.time)} <br />
             <img src="${
               forecastDay.condition.icon_url
-            }" alt="" id="icon-day-1" />
+            }" alt="" id="icon-forecast" />
             <br /> 
-            <span class="max-temp-day-1">${Math.round(
+            <span class="max-temp-forecast">${Math.round(
               forecastDay.temperature.maximum
             )} °</span>
-            <span class="min-temp-day-1">${Math.round(
+            <span class="min-temp-forecast">${Math.round(
               forecastDay.temperature.minimum
             )} °</span>
             </div>`;
