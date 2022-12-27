@@ -1,5 +1,3 @@
-//add final css
-//clean up code
 function conversionCelsius(event) {
   event.preventDefault();
   convertFahrenheit.classList.remove("active");
@@ -87,7 +85,7 @@ function formatDate(daystamp) {
   let months = [
     "Jan",
     "Feb",
-    "March",
+    "Mar",
     "Apr",
     "May",
     "Jun",
@@ -99,6 +97,25 @@ function formatDate(daystamp) {
     "Dec",
   ];
   let month = months[today.getMonth()];
+
+  const images = [
+    "src/undraw_winter_walk_re_rx25.svg",
+    "src/undraw_winter_skating_re_qouk.svg",
+    "src/undraw_reading_re_29f8.svg",
+    "src/undraw_blooming_re_2kc4.svg",
+    "src/undraw_sunlight_re_0usx.svg",
+    "src/undraw_ice_cream_s-2-rh.svg",
+    "src/undraw_summer_1wi4.svg",
+    "src/undraw_beach_day_cser.svg",
+    "src/undraw_fall_is_coming_yl-0-x.svg",
+    "src/undraw_halloween_re_2kq1.svg",
+    "src/undraw_autumn_re_rwy0.svg",
+    "src/undraw_snow_fun_re_plbr.svg",
+  ];
+
+  const image = images[months.indexOf(month)];
+  document.querySelector(".illustration").innerHTML = `
+  <img src="${image}" alt="" height="230px" width="250px"/>`;
 
   return `${weekday}, ${month}. ${day}, ${year}`;
 }
