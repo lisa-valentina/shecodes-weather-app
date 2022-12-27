@@ -1,4 +1,5 @@
-//to do min max temp current day fix Fahrenheit conversion
+//to do min max temp current day fix Fahrenheit conversion - include today's weather in forecast function to use that array
+//check final project with dark mode etc. and use this system to change all fahrenheit and celsius, by always changing unit metric to imperial
 
 function formatTime(timestamp) {
   let now = new Date(timestamp * 1000);
@@ -84,22 +85,24 @@ function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col" id="day-1">
-              ${formatForecast(forecastDay.time)}
+  forecast.forEach(function (forecastDay, index) {
+    if (index) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col" id="day-1">
+              ${formatForecast(forecastDay.time)} <br />
             <img src="${
               forecastDay.condition.icon_url
             }" alt="" id="icon-day-1" />
+            <br /> 
             <span class="max-temp-day-1">${Math.round(
               forecastDay.temperature.maximum
             )} °</span>
             <span class="min-temp-day-1">${Math.round(
               forecastDay.temperature.minimum
             )} °</span>
-   
             </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -142,7 +145,7 @@ function conversionFahrenheit(event) {
   event.preventDefault();
   convertFahrenheit.classList.add("active");
   convertCelsius.classList.remove("active");
-  let fahrenheitTemperature = (celsiusTemperature + 9) / 5 + 32;
+  let fahrenheitTemperature = celsiusTemperature * (9 / 5) + 32;
   let temperatureElement = document.querySelector(".degrees");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
