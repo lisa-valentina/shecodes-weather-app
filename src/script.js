@@ -7,7 +7,6 @@ function conversionCelsius(event) {
   let temperatureElement = document.querySelector(".degrees");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-
 function conversionFahrenheit(event) {
   event.preventDefault();
   convertFahrenheit.classList.add("active");
@@ -16,7 +15,6 @@ function conversionFahrenheit(event) {
   let temperatureElement = document.querySelector(".degrees");
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
-
 function displayResults(response) {
   celsiusTemperature = response.data.temperature.current;
   document.querySelector(
@@ -45,7 +43,6 @@ function displayResults(response) {
   document.querySelector("#date").innerHTML = formatDate(response.data.time);
   getForecast(response.data.coordinates);
 }
-
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -74,7 +71,14 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
+function displayMinMaxTemp(response) {
+  document.querySelector(".current-max-temp").innerHTML = `hi ${Math.round(
+    response.coord.lon
+  )}`;
+  document.querySelector(".current-min-temp").innerHTML = `hi ${Math.round(
+    response.main.temp
+  )}`;
+}
 function formatDate(daystamp) {
   let today = new Date(daystamp * 1000);
   let year = today.getFullYear();
@@ -114,7 +118,6 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
-
 function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
@@ -123,7 +126,6 @@ function getForecast(coordinates) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayForecast);
 }
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
@@ -132,6 +134,8 @@ function handleSubmit(event) {
 
 function search(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+  let apiKeyOpen = "3c949ba49d38be2487ee278e0d2d4059";
+  let apiUrlOpen = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKeyOpen}`;
   axios.get(apiUrl).then(displayResults);
 }
 function showPosition(position) {
