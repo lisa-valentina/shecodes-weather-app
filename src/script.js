@@ -72,12 +72,12 @@ function displayForecast(response) {
   forecastElement.innerHTML = forecastHTML;
 }
 function displayMinMaxTemp(response) {
-  document.querySelector(".current-max-temp").innerHTML = `hi ${Math.round(
-    response.coord.lon
-  )}`;
-  document.querySelector(".current-min-temp").innerHTML = `hi ${Math.round(
-    response.main.temp
-  )}`;
+  document.querySelector(".current-max-temp").innerHTML = `${Math.round(
+    response.data.main.temp_max
+  )} °`;
+  document.querySelector(".current-min-temp").innerHTML = `${Math.round(
+    response.data.main.temp_min
+  )} °`;
 }
 function formatDate(daystamp) {
   let today = new Date(daystamp * 1000);
@@ -137,6 +137,7 @@ function search(city) {
   let apiKeyOpen = "3c949ba49d38be2487ee278e0d2d4059";
   let apiUrlOpen = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKeyOpen}`;
   axios.get(apiUrl).then(displayResults);
+  axios.get(apiUrlOpen).then(displayMinMaxTemp);
 }
 function showPosition(position) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${position.coords.longitude}&lat=${position.coords.latitude}&key=${apiKey}&unit=${unit}`;
