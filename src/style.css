@@ -1,14 +1,31 @@
 body {
   font-family: "Barlow Condensed", sans-serif;
 }
-
 input {
   border-color: #5585b5;
   border-radius: 5px;
   font-size: 18px;
   margin: 5px;
 }
-
+h1 {
+  font-size: 50px;
+}
+li {
+  list-style: none;
+  margin-bottom: 0px;
+}
+.active:hover {
+  cursor: default;
+}
+.celsius {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.celsius:hover {
+  text-decoration: none;
+  color: black;
+}
 .current-location {
   background: none;
   border: none;
@@ -25,25 +42,56 @@ a.current-location:hover span {
   padding-top: 5px;
   font-size: 13px;
 }
-h1 {
+.current-max-temp {
+  font-size: 20px;
+  text-align: right;
+}
+.current-min-temp {
+  font-size: 20px;
+  opacity: 60%;
+  text-align: right;
+}
+.current-weather-card {
+  border-radius: 3px;
+  text-align: right;
+}
+.current-weather {
+  text-align: right;
+}
+.degrees {
   font-size: 50px;
+  line-height: 1;
 }
-li {
-  list-style: none;
-  margin-bottom: 0px;
+.divider {
+  font-size: 20px;
 }
-
+.fahrenheit {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.fahrenheit:hover {
+  text-decoration: none;
+  color: black;
+}
+.local-time {
+  font-size: 25px;
+}
+.min-temp-forecast {
+  opacity: 60%;
+}
+.search-engine-card {
+  border-radius: 3px;
+  padding: 2500px;
+}
 .weather-app {
   margin: 30px auto;
   max-width: 900px;
   display: grid;
 }
-
-.search-engine-card {
-  border-radius: 3px;
-}
-.current-weather-card {
-  border-radius: 3px;
+.weather-details {
+  text-align: left;
+  font-size: 20px;
 }
 .weather-forecast-card {
   border-radius: 3px;
@@ -52,70 +100,9 @@ li {
 #forecast {
   text-align: center;
 }
-.celsius {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-}
-.fahrenheit {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-}
-.celsius:hover {
-  text-decoration: none;
-  color: black;
-}
-
-.active:hover {
-  cursor: default;
-}
-
-.fahrenheit:hover {
-  text-decoration: none;
-  color: black;
-}
-.current-min-temp {
-  font-size: 20px;
-  opacity: 60%;
-  text-align: right;
-}
-
-.current-max-temp {
-  font-size: 20px;
-  text-align: right;
-}
-
-.min-temp-forecast {
-  opacity: 60%;
-}
-
-.divider {
-  font-size: 20px;
-}
-.current-weather-card {
-  text-align: right;
-}
-.current-weather {
-  text-align: right;
-}
-
-.degrees {
-  font-size: 50px;
-  line-height: 1;
-}
-.local-time {
-  font-size: 25px;
-}
-.weather-details {
-  text-align: left;
-  font-size: 20px;
-}
-
 #humidity {
   text-align: right;
 }
-
 #wind {
   text-align: right;
 }
