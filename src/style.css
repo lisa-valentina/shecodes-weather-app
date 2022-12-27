@@ -9,9 +9,7 @@ input {
   font-size: 18px;
   margin: 5px;
 }
-.search-history {
-  margin: 8px;
-}
+
 h1 {
   font-size: 50px;
 }
@@ -19,7 +17,11 @@ li {
   list-style: none;
   margin-bottom: 0px;
 }
+footer {
+  text-align: center;
+}
 .active:hover {
+  color: #00818a;
   cursor: default;
 }
 .celsius {
@@ -29,7 +31,7 @@ li {
 }
 .celsius:hover {
   text-decoration: none;
-  color: #00818a;
+  color: black;
 }
 .current-location {
   background: none;
@@ -80,6 +82,9 @@ a.current-location:hover span {
 .fahrenheit:hover {
   text-decoration: none;
   color: black;
+}
+.forecast-day {
+  font-size: 18px;
 }
 .local-time {
   font-size: 25px;
