@@ -1,4 +1,4 @@
-//to do min max temp current day
+//to do min max temp current day fix Fahrenheit conversion
 
 function formatTime(timestamp) {
   let now = new Date(timestamp * 1000);
@@ -42,7 +42,7 @@ function getForecast(coordinates) {
   let apiKey = "242e181ca0a34d6a4t3befc66o8e43fa";
   let unit = "metric";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=${unit}`;
-  axios.get(apiUrl).then(alert("hi"));
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayResults(response) {
@@ -75,18 +75,25 @@ function displayResults(response) {
   getForecast(response.data.coordinates);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  days.forEach(function (day) {
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col" id="day-1">
-              ${day}
-              <img src="" alt="" id="icon-day-1" />
-              <span class="min-temp-day-1"></span>
-              <span class="max-temp-day-1"></span>
+              ${forecastDay}
+            <img src="${
+              forecastDay.condition.icon_url
+            }" alt="" id="icon-day-1" />
+            <span class="max-temp-day-1">${Math.round(
+              forecastDay.temperature.maximum
+            )} °</span>
+            <span class="min-temp-day-1">${Math.round(
+              forecastDay.temperature.minimum
+            )} °</span>
+   
             </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
@@ -147,7 +154,7 @@ convertFahrenheit.addEventListener("click", conversionFahrenheit);
 
 let convertCelsius = document.querySelector(".celsius");
 convertCelsius.addEventListener("click", conversionCelsius);
+
 let celsiusTemperature = null;
 
 search("Berlin");
-displayForecast();
