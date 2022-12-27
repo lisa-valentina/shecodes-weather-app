@@ -1,4 +1,4 @@
-//to do min max temp current day fix Fahrenheit conversion - include today's weather in forecast function to use that array
+//to do min max temp current day
 //check final project with dark mode etc. and use this system to change all fahrenheit and celsius, by always changing unit metric to imperial
 
 function formatTime(timestamp) {
