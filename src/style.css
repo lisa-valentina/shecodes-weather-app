@@ -55,10 +55,12 @@ li {
 .celsius {
   text-decoration: none;
   color: black;
+  font-size: 20px;
 }
 .fahrenheit {
   text-decoration: none;
   color: black;
+  font-size: 20px;
 }
 .celsius:hover {
   text-decoration: none;
@@ -72,6 +74,19 @@ li {
 .fahrenheit:hover {
   text-decoration: none;
   color: black;
+}
+.current-min-temp {
+  font-size: 20px;
+  text-align: right;
+}
+
+.current-max-temp {
+  font-size: 20px;
+  text-align: right;
+}
+
+.divider {
+  font-size: 20px;
 }
 .current-weather-card {
   text-align: right;
