@@ -1,11 +1,16 @@
 body {
+  background-color: #f6f6f6;
+
   font-family: "Barlow Condensed", sans-serif;
 }
 input {
-  border-color: #5585b5;
+  border-color: #00818a;
   border-radius: 5px;
   font-size: 18px;
   margin: 5px;
+}
+.search-history {
+  margin: 8px;
 }
 h1 {
   font-size: 50px;
@@ -24,22 +29,23 @@ li {
 }
 .celsius:hover {
   text-decoration: none;
-  color: black;
+  color: #00818a;
 }
 .current-location {
   background: none;
   border: none;
+  color: #00818a;
+  font-size: 20px;
   transition: all 150ms ease-in-out;
 }
 a.current-location span {
   display: none;
-  color: #5585b5;
+  color: #00818a;
 }
 a.current-location:hover span {
   display: block;
-  position: absolute;
-  left: 45px;
-  padding-top: 5px;
+  position: relative;
+  text-decoration: none;
   font-size: 13px;
 }
 .current-max-temp {
@@ -52,7 +58,8 @@ a.current-location:hover span {
   text-align: right;
 }
 .current-weather-card {
-  border-radius: 3px;
+  background-color: #ddeedf;
+  border-radius: 5px;
   text-align: right;
 }
 .current-weather {
@@ -81,8 +88,8 @@ a.current-location:hover span {
   opacity: 60%;
 }
 .search-engine-card {
-  border-radius: 3px;
-  padding: 2500px;
+  background-color: #ddeedf;
+  border-radius: 5px;
 }
 .weather-app {
   margin: 30px auto;
@@ -94,7 +101,8 @@ a.current-location:hover span {
   font-size: 20px;
 }
 .weather-forecast-card {
-  border-radius: 3px;
+  background-color: #ddeedf;
+  border-radius: 5px;
   margin: 5px 0px;
 }
 #forecast {

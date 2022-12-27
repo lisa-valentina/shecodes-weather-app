@@ -166,4 +166,4 @@ convertCelsius.addEventListener("click", conversionCelsius);
 
 let celsiusTemperature = null;
 
-search("Berlin");
+search("North Pole");
